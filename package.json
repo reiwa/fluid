@@ -1,0 +1,74 @@
+{
+	"private": true,
+	"scripts": {
+		"start": "gulp",
+		"build": "npm-run-all build:gulp build:webpack",
+		"build:gulp": "gulp build",
+		"build:gulp-favicon": "gulp favicon",
+		"build:webpack": "NODE_ENV=production webpack --color --config webpack/webpack.config.js"
+	},
+	"eslintConfig": {
+		"extends": [
+			"eslint:recommended"
+		],
+		"parser": "babel-eslint",
+		"rules": {
+			"indent": [
+				2,
+				"tab"
+			]
+		},
+		"env": {
+			"es6": true,
+			"browser": true,
+			"node": true
+		}
+	},
+	"babel": {
+		"presets": [
+			"latest",
+			"stage-0"
+		],
+		"plugins": [
+			[
+				"transform-runtime",
+				{
+					"polyfill": false,
+					"regenerator": true
+				}
+			],
+			"add-module-exports"
+		]
+	},
+	"dependencies": {
+		"page": "^1.7.1"
+	},
+	"devDependencies": {
+		"autoprefixer-stylus": "^0.10.0",
+		"babel-core": "^6.18.0",
+		"babel-eslint": "^6.1.0",
+		"babel-loader": "^6.2.4",
+		"babel-plugin-add-module-exports": "^0.2.1",
+		"babel-plugin-transform-runtime": "^6.9.0",
+		"babel-preset-latest": "^6.16.0",
+		"babel-preset-stage-0": "^6.5.0",
+		"babel-runtime": "^6.9.2",
+		"browser-sync": "^2.12.10",
+		"eslint": "^2.12.0",
+		"eslint-plugin-babel": "^3.3.0",
+		"gulp": "^3.9.1",
+		"gulp-favicons": "^2.2.6",
+		"gulp-plumber": "^1.1.0",
+		"gulp-stylus": "^2.5.0",
+		"npm-run-all": "^2.3.0",
+		"stylus": "^0.54.5",
+		"uglify-save-license": "^0.4.1",
+		"webpack": "^1.13.1",
+		"webpack-dev-middleware": "^1.7.0"
+	},
+	"name": "fluid-program",
+	"version": "0.1.0",
+	"description": "Fluid Simulation Program (Moving Particle Semi-implicit)",
+	"author": "sankaku.io",
+	"license": "MIT"
+}
