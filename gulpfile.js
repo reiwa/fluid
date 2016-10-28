@@ -51,4 +51,4 @@ gulp.task('browser-sync', () => {
 gulp.task('default', ['html', 'html:watch', 'browser-sync'])
 
 // ↓ build
-gulp.task('build', ['html', 'stylus'])
+gulp.task('build', ['html'])
